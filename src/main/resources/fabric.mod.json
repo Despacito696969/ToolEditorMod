@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "tool_editor",
+  "version": "${version}",
+  "name": "Tool Editor",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/User/Tool Editor"
+  },
+  "license": "MIT",
+  "icon": "assets/tool_editor/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "org.despacito696969.tool_editor.ToolEditor"
+    ]
+  },
+  "mixins": [
+    "tool_editor.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "accessWidener" : "tool_editor.accesswidener"
+}
