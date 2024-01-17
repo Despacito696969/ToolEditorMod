@@ -11,6 +11,21 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+    maven {
+        // saps.dev Maven (KubeJS and Rhino)
+        url "https://maven.saps.dev/minecraft"
+        content {
+            includeGroup "dev.latvian.mods"
+        }
+    }
+
+    maven {
+        url "https://maven.architectury.dev"
+        content {
+            includeGroup "dev.architectury"
+        }
+    }
+
     // Add repositories to retrieve artifacts from in here.
     // You should only use this when depending on other mods because
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
@@ -26,6 +41,12 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+
+    modRuntimeOnly "dev.architectury:architectury-fabric:9.1.12"
+    modImplementation("dev.latvian.mods:kubejs-fabric:${project.kubejs_version}") {
+        exclude(group: "net.fabricmc.fabric-api")
+    }
 }
 
 processResources {

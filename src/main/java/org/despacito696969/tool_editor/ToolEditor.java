@@ -69,11 +69,11 @@ public class ToolEditor implements ModInitializer {
 
     public static class ToolEdit {
         public ResourceLocation id;
-        public Optional<Integer> uses;
-        public Optional<Float> speed;
-        public Optional<Float> attackDamageBonus;
-        public Optional<Integer> level;
-        public Optional<Integer> enchantmentValue;
+        public Optional<Integer> uses = Optional.empty();
+        public Optional<Float> speed = Optional.empty();
+        public Optional<Float> attackDamageBonus = Optional.empty();
+        public Optional<Integer> level = Optional.empty();
+        public Optional<Integer> enchantmentValue = Optional.empty();
     }
 
     public static final String mod_id = "tool_editor";
@@ -116,11 +116,11 @@ public class ToolEditor implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        inner_init();
+        // inner_init();
 
-        if (did_error_out) {
+        /*if (did_error_out) {
             throw new RuntimeException("Could not load Tool Editor mod because of invalid config");
-        }
+        }*/
     }
 
     public void log_error_wrong_field(JsonObject obj, String key, String type) {
