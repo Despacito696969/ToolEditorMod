@@ -107,7 +107,9 @@ public class ToolEditor implements ModInitializer {
             }
         }
         catch (NoSuchFileException e) {
-            LOGGER.error("No config found (./minecraft/config/" + CONFIG_FILE_NAME + ")");
+            if (!FabricLoader.getInstance().isModLoaded("kubejs")) {
+                LOGGER.error("No config found (./minecraft/config/" + CONFIG_FILE_NAME + ")");
+            }
         }
         catch (IOException e) {
             throw new RuntimeException(e);
